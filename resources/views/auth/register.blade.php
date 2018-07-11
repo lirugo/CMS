@@ -1,77 +1,46 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="columns">
+        <div class="column is-one-third is-offset-one-third m-t-100">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-content">
+                    <h1 class="title has-text-centered">Sign up</h1>
+                    <div class="field">
+                        {!! Form::open(['route' => 'register', 'method' => 'POST']) !!}
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}" aria-label="{{ __('Register') }}">
-                        @csrf
+                            {!! Form::text('name', null, ['class' => 'input' . ($errors->has('name') ? ' is-danger' : ''), 'placeholder' => 'Your name', 'required']) !!}
+                            @if($errors->has('name'))
+                                <p class="help is-danger">{{$errors->first('name')}}</p>
+                            @endif
 
-                        <div class="form-group row">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                            {!! Form::text('email', null, ['class' => 'input m-t-10' . ($errors->has('email') ? ' is-danger' : ''), 'placeholder' => 'email@domain.com', 'required']) !!}
+                            @if($errors->has('email'))
+                                <p class="help is-danger">{{$errors->first('email')}}</p>
+                            @endif
 
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
+                            <div class="columns">
+                                <div class="column">
+                                    {!! Form::password('password', ['class' => 'input m-t-10' . ($errors->has('email') ? ' is-danger' : ''), 'placeholder' => 'Password', 'required']) !!}
+                                    @if($errors->has('password'))
+                                        <p class="help is-danger">{{$errors->first('password')}}</p>
+                                    @endif
+                                </div>
+                                <div class="column">
+                                    {!! Form::password('password_confirmation', ['class' => 'input m-t-10' . ($errors->has('email') ? ' is-danger' : ''), 'placeholder' => 'Confirm Password', 'required']) !!}
+                                    @if($errors->has('password_confirmation'))
+                                        <p class="help is-danger">{{$errors->first('password_confirmation')}}</p>
+                                    @endif
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            {!! Form::submit('Sign up',['class' => 'button is-primary is-outlined is-fullwidth m-t-10']) !!}
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                        {!! Form::close() !!}
+                    </div>
                 </div>
             </div>
+            <h5 class="has-text-centered m-t-10"><a href="{{route('login')}}" class="is-muted">Already have an Account?</a></h5>
         </div>
     </div>
-</div>
 @endsection

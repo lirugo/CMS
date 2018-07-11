@@ -1,4 +1,4 @@
-<nav class="navbar has-shadow p-l-50 p-r-50">
+<nav class="navbar p-l-50 p-r-50">
     <div class="navbar-brand">
         <a class="navbar-item" href="{{ url('/') }}">
             <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
@@ -17,7 +17,7 @@
         <div class="navbar-end">
             @guest
                 <a class="navbar-item is-tab" href="{{ url('/login') }}">Sign in</a>
-                <a class="navbar-item is-tab" href="#">Sign out</a>
+                <a class="navbar-item is-tab" href="{{ url('/register') }}">Sign up</a>
             @else
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link" href="/documentation/overview/start/">
