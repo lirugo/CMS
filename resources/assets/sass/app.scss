@@ -12,3 +12,8 @@
 
 // Font-awesome
 @import 'node_modules/font-awesome/scss/font-awesome';
+
+// Customs SASS Pages
+@import 'overrides';
+@import 'helpers';
+@import 'styles';
