@@ -34,7 +34,7 @@
                                 </div>
                             </div>
 
-                            {!! Form::submit('Sign up',['class' => 'button is-primary is-outlined is-fullwidth m-t-10']) !!}
+                            {!! Form::submit('Sign up',['class' => 'button is-success is-outlined is-fullwidth m-t-10']) !!}
 
                         {!! Form::close() !!}
                     </div>

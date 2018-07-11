@@ -19,9 +19,9 @@
                                 <p class="help is-danger">{{$errors->first('password')}}</p>
                             @endif
 
-                            <b-checkbox name="remember is-right" class="m-t-15">Remember Me?</b-checkbox>
+                            <b-checkbox name="remember" class="m-t-15" type="is-success">Remember Me?</b-checkbox>
 
-                            {!! Form::submit('Sign in',['class' => 'button is-primary is-outlined is-fullwidth m-t-10']) !!}
+                            {!! Form::submit('Sign in',['class' => 'button is-success is-outlined is-fullwidth m-t-10']) !!}
 
                         {!! Form::close() !!}
                     </div>

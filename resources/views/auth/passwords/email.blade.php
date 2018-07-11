@@ -21,7 +21,7 @@
                                 <p class="help is-danger">{{$errors->first('email')}}</p>
                             @endif
 
-                            {!! Form::submit('Get Reset Link',['class' => 'button is-primary is-outlined is-fullwidth m-t-20']) !!}
+                            {!! Form::submit('Get Reset Link',['class' => 'button is-success is-outlined is-fullwidth m-t-20']) !!}
 
                         {!! Form::close() !!}
                     </div>

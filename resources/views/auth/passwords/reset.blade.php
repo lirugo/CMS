@@ -43,7 +43,7 @@
                             </div>
                         </div>
 
-                        {!! Form::submit('Reset Password',['class' => 'button is-primary is-outlined is-fullwidth m-t-10']) !!}
+                        {!! Form::submit('Reset Password',['class' => 'button is-success is-outlined is-fullwidth m-t-10']) !!}
 
                         {!! Form::close() !!}
                     </div>
