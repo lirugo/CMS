@@ -163,6 +163,8 @@ return [
         //Laravelcollective
         Collective\Html\HtmlServiceProvider::class,
 
+        //Laratrust
+        Laratrust\LaratrustServiceProvider::class,
     ],
 
     /*
@@ -215,6 +217,9 @@ return [
         //Laravelcollective
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+
+        //Laratrust
+        'Laratrust'   => Laratrust\LaratrustFacade::class,
     ],
 
 ];
