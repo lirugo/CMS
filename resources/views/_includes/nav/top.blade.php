@@ -1,4 +1,4 @@
-<nav class="navbar p-l-50 p-r-50">
+<nav class="navbar has-shadow p-l-50 p-r-50">
     <div class="navbar-brand">
         <a class="navbar-item" href="{{ url('/') }}">
             <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
@@ -21,30 +21,31 @@
             @else
                 <div class="navbar-item has-dropdown is-hoverable">
                     <a class="navbar-link" href="/documentation/overview/start/">
-                        Docs
+                        Hey, {{ Auth::user()->name }} !
                     </a>
                     <div class="navbar-dropdown is-right">
-                        <a class="navbar-item" href="/documentation/overview/start/">
-                            Overview
+                        <a class="navbar-item" href="#">
+                            <span class="icon"><i class="fa fa-fw fa-user-circle-o m-r-5"></i></span>
+                            Profile
                         </a>
-                        <a class="navbar-item" href="https://bulma.io/documentation/modifiers/syntax/">
-                            Modifiers
+                        <a class="navbar-item" href="#">
+                            <span class="icon"><i class="fa fa-fw fa-bell m-r-5"></i></span>
+                            Notifications
                         </a>
-                        <a class="navbar-item" href="https://bulma.io/documentation/columns/basics/">
-                            Columns
-                        </a>
-                        <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">
-                            Layout
-                        </a>
-                        <a class="navbar-item" href="https://bulma.io/documentation/form/general/">
-                            Form
+                        <a class="navbar-item" href="{{url('/manage')}}">
+                            <span class="icon"><i class="fa fa-fw fa-cog m-r-5"></i></span>
+                            Manage
                         </a>
                         <hr class="navbar-divider">
-                        <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">
-                            Elements
-                        </a>
-                        <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
-                            Components
+                        <a class="navbar-item" href="{{route('logout')}}" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            <span class="icon">
+                                <i class="fa fa-fw fa-sign-out m-r-5"></i>
+                            </span>
+                            Sign out
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: one;">
+                                {{ csrf_field() }}
+                            </form>
                         </a>
                     </div>
                 </div>

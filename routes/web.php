@@ -18,3 +18,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/*
+|--------------------------------------------------------------------------
+| Manage route
+|--------------------------------------------------------------------------
+*/
+
+Route::group([
+    'prefix' => 'manage',
+    'namespace' => 'Manage',
+    'middleware' => 'auth', 'role:superadministrator|administrator|editor|author|contributor',
+    ], function () {
+        Route::get('/', 'ManageController@index');
+    });

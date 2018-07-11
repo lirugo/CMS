@@ -9,17 +9,33 @@
                     <div class="field">
                         {!! Form::open(['route' => 'login', 'method' => 'POST']) !!}
 
-                            {!! Form::text('email', null, ['class' => 'input' . ($errors->has('email') ? ' is-danger' : ''), 'placeholder' => 'email@domain.com', 'required']) !!}
-                            @if($errors->has('email'))
-                                <p class="help is-danger">{{$errors->first('email')}}</p>
-                            @endif
+                            <div class="control has-icons-left has-icons-right m-b-10">
+                                {!! Form::text('email', null, ['class' => 'input' . ($errors->has('email') ? ' is-danger' : ''), 'placeholder' => 'email@domain.com', 'required']) !!}
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+                                @if($errors->has('email'))
+                                    <span class="icon is-small is-right">
+                                        <i class="fa fa-exclamation-triangle"></i>
+                                    </span>
+                                    <p class="help is-danger">{{$errors->first('email')}}</p>
+                                @endif
+                            </div>
 
-                            {!! Form::password('password', ['class' => 'input m-t-10' . ($errors->has('email') ? ' is-danger' : ''), 'placeholder' => 'password', 'required']) !!}
-                            @if($errors->has('password'))
-                                <p class="help is-danger">{{$errors->first('password')}}</p>
-                            @endif
+                            <div class="control has-icons-left has-icons-right m-b-10">
+                                {!! Form::password('password', ['class' => 'input' . ($errors->has('email') ? ' is-danger' : ''), 'placeholder' => 'Enter Your Password', 'required']) !!}
+                                <span class="icon is-small is-left">
+                                    <i class="fa fa-key"></i>
+                                </span>
+                                @if($errors->has('email'))
+                                    <span class="icon is-small is-right">
+                                        <i class="fa fa-exclamation-triangle"></i>
+                                    </span>
+                                    <p class="help is-danger">{{$errors->first('email')}}</p>
+                                @endif
+                            </div>
 
-                            <b-checkbox name="remember" class="m-t-15" type="is-success">Remember Me?</b-checkbox>
+                            <b-checkbox name="remember" type="is-success">Remember Me?</b-checkbox>
 
                             {!! Form::submit('Sign in',['class' => 'button is-success is-outlined is-fullwidth m-t-10']) !!}
 
