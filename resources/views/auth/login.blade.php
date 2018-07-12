@@ -11,13 +11,9 @@
 
                             <div class="control has-icons-left has-icons-right m-b-10">
                                 {!! Form::text('email', null, ['class' => 'input' . ($errors->has('email') ? ' is-danger' : ''), 'placeholder' => 'email@domain.com', 'required']) !!}
-                                <span class="icon is-small is-left">
-                                    <i class="fa fa-envelope"></i>
-                                </span>
+                                <span class="icon is-small is-left"><i class="fa fa-envelope"></i></span>
                                 @if($errors->has('email'))
-                                    <span class="icon is-small is-right">
-                                        <i class="fa fa-exclamation-triangle"></i>
-                                    </span>
+                                    <span class="icon is-small is-right"><i class="fa fa-exclamation-triangle"></i></span>
                                     <p class="help is-danger">{{$errors->first('email')}}</p>
                                 @endif
                             </div>

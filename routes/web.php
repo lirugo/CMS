@@ -32,4 +32,5 @@ Route::group([
     ], function () {
         Route::get('/', 'ManageController@index');
         Route::resource('/users', 'UserController');
+        Route::resource('/permissions', 'PermissionController');
     });
