@@ -4,16 +4,16 @@
 // Variables
 @import "variables";
 
+// Font-awesome
+@import 'node_modules/font-awesome/scss/font-awesome';
+
 // Bulma
 @import 'node_modules/bulma/bulma';
 
 // Bulma Vue Modules
 @import 'node_modules/buefy/src/scss/buefy';
 
-// Font-awesome
-@import 'node_modules/font-awesome/scss/font-awesome';
-
-// Customs SASS Pages
+// Customs SCSS files
 @import 'overrides';
 @import 'helpers';
 @import 'manage';

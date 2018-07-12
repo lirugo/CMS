@@ -19,14 +19,20 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @yield('stylesheets')
 </head>
 <body>
-    <div id="app">
+<div id="app">
 
-        @include('_includes.nav.top')
+    @include('_includes.nav.top')
 
-        @yield('content')
+    @yield('content')
 
-    </div>
+</div>
+
+<!-- Scripts -->
+<script src="{{ asset('js/app.js') }}"></script>
+@yield('scripts')
 </body>
 </html>

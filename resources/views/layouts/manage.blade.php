@@ -19,6 +19,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    @yield('stylesheets')
 </head>
 <body>
     <div id="app">
@@ -27,8 +29,14 @@
 
         @include('_includes.nav.left')
 
-        @yield('content')
+        <div class="management-area">
+            @yield('content')
+        </div>
 
     </div>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}"></script>
+    @yield('scripts')
 </body>
 </html>

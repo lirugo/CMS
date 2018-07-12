@@ -31,4 +31,5 @@ Route::group([
     'middleware' => 'auth', 'role:superadministrator|administrator|editor|author|contributor',
     ], function () {
         Route::get('/', 'ManageController@index');
+        Route::resource('/users', 'UserController');
     });
