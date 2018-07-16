@@ -23,7 +23,7 @@
 
                 <div class="control has-icons-left has-icons-right m-b-10">
                     {!! Form::text('name', $permission->name, ['class' => 'input is-warning' . ($errors->has('name') ? ' is-danger' : ''), 'placeholder' => 'Slug', 'disabled']) !!}
-                    <span class="icon is-small is-left"><i class="fa fa-database"></i></span>
+                    <span class="icon is-small is-left"><i class="fa fa-terminal"></i></span>
                     @if($errors->has('name'))
                         <span class="icon is-small is-right"><i class="fa fa-exclamation-triangle"></i></span>
                         <p class="help is-danger">{{$errors->first('name')}}</p>
