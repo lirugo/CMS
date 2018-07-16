@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Manage;
 
+use App\Role;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -93,8 +94,9 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::find($id);
-        return view("manage.users.edit")->withUser($user);
+        $roles = Role::all();
+        $user = User::where('id', $id)->with('roles')->first();
+        return view("manage.users.edit")->withUser($user)->withRoles($roles);
     }
 
     /**
@@ -131,6 +133,10 @@ class UserController extends Controller
             $user->password = Hash::make($request->password);
         }
         $user->save();
+
+        if ($request->roles) {
+            $user->syncRoles(explode(',', $request->roles));
+        }
 
         //Redirect
         return redirect()->route('users.show', $id);

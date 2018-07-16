@@ -24,6 +24,16 @@
                             <div class="media-content">
                                 <p class="title is-4">{{$user->name}}</p>
                                 <p class="subtitle is-6">{{$user->email}}</p>
+                                <div class="field">
+                                    <label class="label">Roles</label>
+                                    <ul>
+                                        @forelse ($user->roles as $role)
+                                            <li>{{$role->display_name}} - ({{$role->description}})</li>
+                                        @empty
+                                            <p>This user has not been assigned any roles yet</p>
+                                        @endforelse
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
