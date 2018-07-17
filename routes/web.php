@@ -32,6 +32,7 @@ Route::group([
     ], function () {
         Route::get('/', 'ManageController@index');
         Route::resource('/users', 'UserController');
+        Route::resource('/posts', 'PostController');
         Route::resource('/roles', 'RoleController', ['expect' => 'destroy']);
         Route::resource('/permissions', 'PermissionController', ['expect' => 'destroy']);
     });

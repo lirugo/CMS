@@ -165,6 +165,9 @@ return [
 
         //Laratrust
         Laratrust\LaratrustServiceProvider::class,
+
+        //LaraFlash
+        DevMarketer\LaraFlash\LaraFlashServiceProvider::class,
     ],
 
     /*
@@ -220,6 +223,9 @@ return [
 
         //Laratrust
         'Laratrust'   => Laratrust\LaratrustFacade::class,
+
+        //LaraFlash
+        'LaraFlash' => DevMarketer\LaraFlash\LaraFlashFacade::class,
     ],
 
 ];
